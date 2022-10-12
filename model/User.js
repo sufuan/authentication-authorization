@@ -49,6 +49,16 @@ UserSchema.pre('save', async function (next) {
 
 
 
+// =====================login area ================
+
+UserSchema.methods.comparePassword = async function (password) {
+    return await bcrypt.compare(password, this.password);
+}
+
+
+
+
+
 
 
 
